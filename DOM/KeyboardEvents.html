@@ -1,0 +1,35 @@
+<!-- There are 3 main events which are directly related to keyboard-->
+<!--Keydown
+    KeyPress
+    keyup-->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Events</title>
+</head>
+<body>
+    <div id="divE">
+        <h1 id="msg">No Events</h1>
+       <!--<input type="text" onkeyup="eHandler('keyup')"
+        // onkeydown="eHandler('keydown')"/>
+         <input type="text" onkeypress="eHandler('keypressed')"/> -->
+         <input type="text" onkeydown="eHandler()"/>
+    </div>
+    <script>
+        function eHandler(){
+            let msg = event.code + '<br/>' + event.key;   // event.code returns the key that was pressed.
+           document.getElementById("msg").innerHTML = msg;
+        }
+    </script>
+</body>
+</html>
+<!--event.code and event.key-->
+<!--When you press the key, it is the keydown event and it has a property called event.repeat which is set to true when an event is getting repeated-->
+<!--How to check if the combination of keys is pressed or not--
+    if(event.crtlKey && event.code===KeyZ)
+    // statements>
+

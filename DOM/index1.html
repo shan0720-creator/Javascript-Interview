@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Dom</title>
+</head>
+<body>
+    <div>
+        <h1 id="message">Understanding DOM</h1>
+        <button onClick="updateMessage()">Change</button>
+    </div>
+</body>
+</html>
+<script>
+    function updateMessage(){
+        const h1 = document.getElementById("message");
+        if(h1.innerHTML==="Understanding DOM"){
+            h1.innerHTML = "Dom Manipulation & API";
+        }
+        else{                                       //Dom - document object model 
+                                                     // browser object model
+                                                     // searching adding removing through the dom tree via a programming language like javascript or python is called as dom manipulation
+
+                                                     // Dom is an internal model of document where every element of the document is an object and availaible for programming languages to access
+
+                                                     // Dom Tree - it is a kind of a tree in which we have a parent/child relationship and is kind of a hierarchial presentation  
+                                                     // there is also a term called - DOM Traversal when you loop through the entire tree in case when you want to search an element to edit or remove , all these operations are also known as DOM manipulation 
+                                                    
+            h1.innerHTML = "Understanding DOM";
+        }
+    }
+</script>

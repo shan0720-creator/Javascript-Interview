@@ -1,0 +1,49 @@
+<!-- Input Elements Events-->
+<!--Whenever you make a web application/page , you will always have different types of input elements like
+ Text Box check Box Radio button etc-->
+ <!--Onfocus-- when an element recieves focus or when cursor is placed on the element, onfocus event is fired for that element-->
+ <!--onblur is opposite to onfocus; when an element loses the focus, onblur event is fired-->
+
+ 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KeyBoard Events</title>
+    </head>
+    <body>
+        <div id="divE">
+            <h1 id="msg">No Events</h1>
+           <!--<input type="text" onkeyup="eHandler('keyup')"
+            // onkeydown="eHandler('keydown')"/>
+             <input type="text" onkeypress="eHandler('keypressed')"/> -->
+              
+             <input type="text" onfocus="eHandler('focus')" onchange="eHandler('The value is changed')" /><br/>
+              Check Me!
+             <input type="checkbox" onchange="eHandler(this.checked)"/>
+             Radio 1<input type="radio" value="Radio 1" name="r" onchange="eHandler(this.value + '-' + this.checked)" />
+             Radio 2<input type="radio" value="Radio 2" name="r" onchange="eHandler(this.value + '-' + this.checked)" /><br/>
+             <select onchange="eHandler(this.value)"> <!--(this.options[this.selectedIndex].text) -to get the selected items in a list--> 
+                <option value="1">List 1</option>
+                <option value="2">List 2</option>
+                <option value="3">List 3</option>
+                <option value="4">List 4</option>
+
+            </select>
+             <input type="text" oninput="eHandler(this.value)"/>
+        </div>
+        <script>
+            function eHandler(msg){
+               // let msg = event.code + '<br/>' + event.key;   // event.code returns the key that was pressed.
+               document.getElementById("msg").innerHTML = msg;
+            }
+        </script>
+    </body>
+    </html>
+    <!--"onchange"-"oninput"
+     onchange is fired when the focus is lost and at the same time the content is also changed-->
+     <!--onblur also gets fired on losing the focus;  same as onchange but onchange is fired when there is also some changes done in the element-->
+   <!-- input can be copy pasted or added by voice input-->
+   <!--oninput fires in all the cases when there is an input by any media-->
+   <!--onkeyup/onkeypress will not be fired when content is copy pasted by right click or voice input is added-->

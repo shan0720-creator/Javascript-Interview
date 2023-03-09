@@ -1,0 +1,41 @@
+<!--Event Bubbling-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+</head>
+<body>
+    <div onClick="divClick()">
+        <button name="btn1" onclick="btnClick()">Click Me</button>
+    </div>
+    <script>
+        function divClick(){
+            alert("Division clicked")
+        }
+        function btnClick(){  
+            event.stopPropagation(); // stop the propagation from happening
+          //  alert(event.target.name)           //event.target returns the reference of element which raised the event
+            alert("Button Clicked")
+        }
+    </script>
+    
+</body>                                            <!--This traversal of target to ancestor is called as propagation or event propagation-->
+</html>                                              <!--Window-->   <!--Ancestor-->
+                                                     <!--document-->
+                                                     <!--html-->
+                                                     <!--body-->
+                                                     <!--div-->
+                                                     <!--button-->   <!--target-->
+
+                                                     <!--A bubble has a tendency to go up from the bottom thats why we say it as event bubbling-->
+
+                                                    <!--The event object is dispatched on a path: ie-- "bottom to top"-->
+
+                                                     <!--The default path of "Event propagation is bottom to top"-->
+
+                                                     <!--In case if you want to stop the default propagation i.e:- "bottom to top"-->
+                                                     <!--event.stopPropagation()-->
+                                                     <!--In Case if you want to change this default propagation path i.e:- instead of bottom to top we make it to top to bottom then that will be "capturing"-->
+                                                     <!--For "capture" phase you have to use addEventListener() method to configure or bind the event Capturing phase means top to bottom -->

@@ -1,0 +1,21 @@
+<!--getElementBy() id,tags,class,&name-->
+<!--getelementById() is one of the method which you can use to get a specific element only-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access</title>
+</head>
+<body>
+    <h1 id="cnt">Content When Page Loaded...</h1>
+    <button onclick="btnClicked()">Change Content</button>
+</body>
+<script>
+    function btnClicked(){
+        const cntEle = document.getElementById("cnt");  // Gets the reference directly
+        cntEle.innerHTML = "content after button clicked"
+    }
+        
+</script>
+</html>

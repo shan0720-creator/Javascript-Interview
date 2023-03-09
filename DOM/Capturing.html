@@ -1,0 +1,34 @@
+<!--Capturing-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+</head>
+<body>
+    <div id="div1" >
+        <button id="btn1" >Click Me</button>
+    </div>
+    <script>
+        const btn1 = document.getElementById("btn1");
+        const div1 = document.getElementById("div1");
+
+        window.onload = function(){
+            btn1.addEventListener("click",btnClick,true);
+            div1.addEventListener("click",divClick,true);
+        }
+        function divClick(){
+            alert("Division clicked")
+        }
+        function btnClick(){  
+            event.stopPropagation();    
+            alert("Button Clicked")
+        }
+    </script>
+    
+</body>                                            <!--This traversal of target to ancestor is called as propagation or event propagation-->
+</html>                                            <!--reverse the order of event bubbling , this method is called capturing from top to bottom-->
+                                                    <!--Bubbling or capturing actually facilitates you with one of the most powerful event handling pattern called event delegation-->
+                                                    <!--How can you get the reference of the element on which it is fired -->
+                                                    <!-- use event.target event.target.name event.target.value-->

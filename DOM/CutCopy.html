@@ -1,0 +1,22 @@
+<!--oncut, oncopy , and onpaste events-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="divE">
+        <h1 id="msg">Event Status</h1>
+        <input type="text" oncut="eHandler('oncut')" oncopy="eHandler('Oncopy')" onpaste="eHandler('Onpaste')"><br/> <!--use event.preventdefault() or equate = "return false" to stop an event from happening-->
+    </div>
+</body>
+<script>
+    function eHandler(msg){
+        document.getElementById("msg").innerHTML = msg;
+    }
+</script>
+</html>
+
+<!-- There are events like 'oncopy', 'oncut' & 'onpaste which can handle the cut copy or paste action coding'-->

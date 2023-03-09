@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page Content</h1>
+    <script type="module">
+        import {sum,cube} from './index2.js'; // inorder to import all the modules
+        console.log(sum(4,5));                // import * as calc from './calc.js'  // when you have a file which has many modules and all are to be imported then this  method is used
+
+                                              //console.log(calc.sum(9,5))
+                                              //console.log(calc.cube(3))
+      console.log(cube(3));
+    </script>
+</body>
+
+</html>
+
+<!--In modern build tools like webpack, if some imported modules are not used then those modules are removed is called Tree shaking-->
+<!--In ES6, there is no hoisting, but for modules-yes , you do have hoisting-->
+<!--module(); // using module before the import
+  import module from 'path'  -->

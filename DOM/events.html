@@ -1,0 +1,41 @@
+<!--Events are various types of actions on which you can run your desired code-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button onClick="alert('Not an idea way')">The inlineway</button>
+    <button onClick="showMsg()">Common Way</button>
+    <button id="btn">Binding Event Later</button>
+    <button id="btn1">Binding with Listener</button>
+
+</body>
+<script>
+    const btn = document.getElementById("btn");
+    btn.onclick = function(){
+        alert("Event Bound later on")
+       
+    }
+    const btn1 = document.getElementById("btn1");
+    btn1.addEventListener("click",btn1Clicked,);
+    function btn1Clicked(){
+        alert("Add event listener is clicked")
+    }
+
+    function showMsg(){
+        alert("The common way");
+        console.log(event);
+        console.log(event.type); // event.bubbles to get nested paras
+        console.log(event.target) // which element raised the event
+    }
+</script>
+<!--The event object is the parent object of all event objects-->
+<!--Event Objects like MouseEvent, keyboardEvent, FocusEvent, TouchEvent, UiEvent-->
+<!--Explain various ways to configure an event with HTML elements-->
+<!--Given Above-->
+<!--The event object is something which is propagated whenever there is an event generated and it gives you various properties which you can access, you have details of the event as well as the element which raised the event-->
+
+</html>

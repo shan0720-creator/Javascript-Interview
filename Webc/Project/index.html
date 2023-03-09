@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component</title>
+    <style>
+        h1{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+     <h1> Header Section</h1>
+     <product-card></product-card>
+     <product-card></product-card>
+     <product-card></product-card>
+     <product-card></product-card>
+     
+     <script src="./productCard.js"></script>
+</body>
+</html>
+
+
+<!--Shadow DOM is a way to provide encapsulation to the web component or in other words -shadow DOM is a way to provide seperate hidden DOM to web components i.e: - web components own DOM -->
+<!--With the help of shadow dom we made sure that we have the DOM itself in a seperate scope and the shadow DOM as a seperate scope for the web developement-->
+<!--When you want to have encapsulation for your web developement , so that it can have its own CSS/settings which does not clash with the original page's DOM - thats why we use Shadow DOM-->
+
+
+
+<!-- A template tag allows you to define the HTML template (Template means there is a design - which you can use by making a copy or clone of it)-->

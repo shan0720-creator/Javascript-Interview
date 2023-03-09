@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set-TimeOut</title>
+</head>
+<body>
+    <h1 id="txt">Waiting...</h1>
+    <button onClick = "tryTimer()">Start Timer</button>
+    <script>
+        function tryTimer(){
+            setTimeout(function(){  // or simply write an arrow function ()=>
+                document.getElementById("txt").innerHTML="I am Ugly but You....."
+            },2000);
+        }
+       
+    </script>
+</body>
+</html>
+
+
+<!--setTimeout() will execute the process only once -->
+<!--setInterval() keeps on executing the process-->

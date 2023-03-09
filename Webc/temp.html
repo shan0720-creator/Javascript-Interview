@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The template Tag</h1>
+    <button onclick="show()">Show</button>
+    <div id="login"></div>
+  
+    <script>
+        function show(){
+          const login = document.getElementById("login");
+          const template = document.createElement('template');
+          template.innerHTML = `<div>
+               <label> Login </label>
+               <input type="text">                
+            </div>`
+          const clone = template.content.cloneNode(true);
+          login.appendChild(clone);        // Creating the template at runtime using javascript
+        }
+    </script>
+</body>
+</html>
+
+<!--
+     <template id="tmp">
+     <div>
+            <label>Login</label>   --Remember! <template> tag contains the HTML which is is not rendered on the page load but it is displayed only through javascript
+                <input type="text">
+            </div>
+        </template>
+-->
+
+
+<!--Its like you assign a value to a variable , but how about assigning lot of HTML and CSS to a variable-->

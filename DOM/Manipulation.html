@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation</title>
+</head>
+<body>
+     <div id="div1">
+        <h1>First Division</h1>
+        <ul>
+            <li>First Item</li>
+            <li>Second Item</li>
+        </ul>
+     </div>                                                     
+     <div>
+        <h1>Second Division</h1>
+        <input type="text"/><br/>
+        <button onClick="btnClick()">Click Me!</button>
+     </div>
+     <script>
+        
+            //console.log(document.documentElement) // It refers the top element i.e - html node
+           // console.log(document.head);   // It refers to the head element
+            //console.log(document.body.childNodes.length); // referes to the child nodes length
+           // console.log(document.body) // It refers to the body
+                                       // Every Tab, new line and white space are counted
+             function btnClick(){
+                //for(let i=0; i<document.body.childNodes.length; i++){
+                    //console.log(document.body.childNodes[i])              // it loops through every node inside of the body , you can also check inside the divs by just replacing div to the body body.childnodes to div.childnodes
+              //  }
+              const div1 = document.getElementById("div1")
+              console.log(div1.firstElementChild) // inorder to get the first child proper we have .firstElementchild
+             }                          // In order to navigate through the DOM tree, you must have some way to loop through the last node of the DOM tree.
+                                       // The document has several properties like, You can navigate upwards, you can navigate downwards , You can navigate side ways
+                                       // To access the child node you can use firstChild, firstElementChild, lastChild, and lastElementChild properties of any DOM tree node
+                                    // .nodeName property to access the node, or nodeType
+                                    // .nextSibling properties 
+                                    // to access siblings we have .nextSibling , .nextElementSibling , .previousSibling, and .previousElementSibling
+                                    // .parentNode and .parentElement methods to check for parent elements 
+                                    // Types of Node in Javascript
+                                    // ELEMENT_NODE - value - 1
+                                    // TEXT_NODE - value - 3
+                                    // COMMENT_NODE - value - 8
+                                    // DOCUMENT_NODE - value - 9
+                                    // DOCUMENT_TYPE_NODE - value - 10
+                                    // Difference between child nodes and children property
+                                    // Childnodes returns all the nodes whereas children property returns only regular<html> elements
+                                    // How to check whether the element has child nodes or not 
+                                    // We can use childNodes.length
+                                    // -hasChildNodes()
+                                    // The basic idea of traversal or navigation is we have access programatically if we have access programmatically to all the Nodes in HTML page,
+                                    // If You want to remove a specific node or modify the content
+                                    // In such case, You can traverse through node by using earlier shown DOM navigation methods and properties
+                                    // div1.lastChild.nextSibling - null The element div1.lastChild is always the last one, it has no nextSibling
+                                    
+
+
+
+        
+     </script>
+</body>
+</html>                          

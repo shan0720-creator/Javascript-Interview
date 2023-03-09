@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Component </title>
+    <style>
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1> Header Section </h1>
+    <product-card 
+        pname="Apple"
+        price="$40"
+        pimg="https://www.freepnglogos.com/uploads/apple-png/vector-graphic-apple-fruit-nature-red-juicy-36.png"
+        pstatus="Not Sold">
+        <h1 slot="ptitle">Apple component</h1>
+    </product-card>
+    <product-card 
+        pname="Orange"
+        price="$30"
+        pimg="https://www.freepnglogos.com/uploads/lime-png/vector-graphic-lime-fruit-food-acidic-citrus-image-pixabay-21.png"
+        pstatus="Not Sold">
+        <h1 slot="ptitle">Orange component</h1>
+    </product-card>
+    <product-card 
+        pname="Grapes"
+        price="$20"
+        pimg="https://www.freepnglogos.com/uploads/grapes-png/illustration-grapes-vine-vineyard-wine-29.png"
+        pstatus="Not Sold">
+        <h1 slot="ptitle">Grapes component</h1>
+    </product-card>
+    <product-card 
+        pname="Banana"
+        price="$23"
+        pimg="./b.png"
+        pstatus="Not Sold">
+        <h1 slot="ptitle">Banana component</h1>
+    </product-card>
+
+    <script src="./productCard.js"></script>
+</body>
+</html>
+
+
+<!--What is light dom:- it is the actual dom only! whenever there is a concept of shadow DOM with web components, we need to segregate the actual DOM from the shadow DOM-->
+
+

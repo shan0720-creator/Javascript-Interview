@@ -1,0 +1,15 @@
+<!-- Life Cycle Callbacks-->
+<!-- There are methods getting called automatically on different phases of web component if you give them-->
+
+<!-- From components initialization  
+     attaching to DOM 
+      Modification in between 
+      Removed from DOM
+      -->
+
+      <!-- Explanation
+        when the component is initialized - the constructor() is invoked
+        components get attached to the documents DOM at that time the connectedCallback() is invoked
+         when the custom element is disconnected from documents DOM -disconnectedCallback() is invoked
+         During the existence of component - if an attribute is added, removed or even value changed then attributeChangedCallback() is invoked
+         when the component is moved on a new page/document then  adoptedCallback() is invoked which is very rarely used -->

@@ -1,0 +1,51 @@
+<!--Mouse Events-->
+<!--First we will see Click/Right Click and double click events-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event!</title>
+</head>
+<body>
+    <div id="divE" onClick="eHandler('click')" oncontextmenu="eHandler('Right Click')" ondblclick="eHandler('Double Click')">Click Events</div> <!--oncontextmenu = "return false" will cancel the event-->
+        <div id="divE2" onmousedown="eHandler2('Mouse Down')" onmouseup="eHandler2('Mouse Up')" >Click Events <!--oncontextmenu = "return false" will cancel the event-->
+
+    </div>
+    <script>                                                          // How do you check mouse button value while an event is generated
+        function eHandler(msg){                                      // let msg='';
+                                                                      // if(event.button===0) msg = "Left Button Pressed"
+                                                                     // if(event.button===1) msg = "Middle Button"
+                                                                     // if(event.button===2) msg = "Right Button"
+
+            document.getElementById("divE").innerHTML = msg;
+        }
+        function eHandler2(msg){
+            document.getElementById("divE2").innerHTML = msg; // similary you can also execute the onmouseout = "ehandler('mouse out)" and onmouseover="ehandler('Mouse Over')"
+        }
+    </script>
+</body>
+</html>
+
+<!--oncontextmenu event can be used to handle the Right Click-->
+<!--For checking for keypress events-->
+<!--let msg='No Key'-->
+<!--if(event.altKey){
+    msg= "[ALT]"
+}
+  if(event.crtlkey){
+    msg="[CRTL]"
+  }
+  if(event.shiftKey){
+    msg = "[SHIFT]"
+  }
+  if(event.altKey && event.crtlKey){
+    msg = "[A+C]"
+  }
+  document.getElementById("divE").innerHTML = msg
+-->
+
+<!--For Crtl key & cmd on mac how will you write the condition to check the key press.-->
+<!--if(event.crtlKey || event.metaKey){
+    // statements
+}-->

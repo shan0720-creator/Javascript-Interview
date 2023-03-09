@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegation</title>
+</head>
+<body>
+     <table onclick="mainClick()">
+        <tr>
+            <td>Code</td>
+            <td>Product</td>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td>1001</td>
+            <td>Apple</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>1002</td>
+            <td>Orange</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>1003</td>
+            <td>Banana</td>
+            <td><input type="text"/></td>
+        </tr>                                    
+    </table>
+    <script>
+        function mainClick(){
+           // console.log(event.target)                    // when you have deep level elements and you want to handle top level you can use "bubbling" or "capturing"         
+           // console.log(event.target.tagName)
+           // console.log(event.target.innerHTML)
+
+           if(event.target.tagName==='TD'){
+            console.log(event.target.innerHTML)
+           }else{
+             console.log(event.target.value)
+           }
+        }
+    </script>
+</body>
+</html>

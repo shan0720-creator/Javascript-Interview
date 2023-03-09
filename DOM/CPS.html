@@ -1,0 +1,30 @@
+<!--Client X/Y vs. Page X/Y vs Screen X/Y Co-ordinates
+  With MouseEvent there are various properties of event object which give you X & Y position/co-ordinates of mouse -->
+  <!--They can be used in different contexts as per requirement and these properties are: 
+   ClientX, ClientY, pageX,pageY, ScreenX, ScreenY-->
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPS</title>
+   </head>
+   <body onmousemove="eHandler()">
+     <div id="divE">X Y Display</div><br/>
+     <div id="main"></div>
+     <script>
+        function eHandler(){
+            let msg = '';
+            msg="client-X:"+ event.clientX+ ",Y:" + event.clientY;
+            msg = msg+"\npage-X:" + event.pageX + ",Y:" + event.pageY;
+            msg=msg + "\nscreen-X:" + event.screenX+ ",Y:"+ event.screenY;
+
+            document.getElementById("divE").innerHTML = msg;
+        }
+     </script>
+    
+   </body>
+   </html>
+
+   <!--Screen X/Y represents the entire screen size of your device-->
+   <!--clientX/Y is relative to the current window whereas page X/Y is relative to the document/page-->

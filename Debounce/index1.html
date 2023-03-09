@@ -1,0 +1,159 @@
+<!--Debouncing and throttling is not a javascript keyword or command-->
+<!-- It is the approach or the way you handle events -->
+<!--So basically it is a concept to improve the event handling and the application performance-->
+<!--You are controlling the events fired like: a mouse move event, or a scroll event or a key press event-->
+
+<!--Throttling and debouncing help you to control/improvise performance while the events are executed-->
+
+<!--Imagine that, on an event you are making a call to an API or an HTTP call or a huge process to execute within a function -->
+<!--In such cases , Throttling or Debouncing will improvise the overall performance-->
+<!--Debouncing and Throttling as they both are used to improve the performance-->
+
+<!--Throttling:- where events occur after a certain time only - regardless of when and how many times they are actually fired-->
+
+<!--eg: - the mousemove event may occur 100 times a second, but you configure the code in such a way so that it gets executed only after 2 seconds 
+and 200 times-->
+<!--mousemove event is configured to fire at every 1 second, provided there was no mousemove for 1 second-->
+<!-- If the mouse moves in half a second i.e:- 500ms then again wait for 1 more second-->
+<!--Debouncing will execute after every certain time provided in-between there was no event call-->
+<!--Throttling Implementation-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onmousemove="showCounts()">
+        <h2 id="nCnt">Normal Count:0</h2>
+        <h2 id="tCnt">Throttle Count:0</h2>
+        <h2 id="dCnt">Debounce Count:0</h2>
+    </div>
+    <script>
+        let nCnt = 0;
+        let tCnt = 0;
+        let dCnt = 0;
+        let nh2 = document.getElementById("nCnt");
+        let th2 = document.getElementById("tCnt");
+        let dh2 = document.getElementById("dCnt");
+        let fireThrottle = true;
+        let dTimer;
+
+        function showCounts(){
+            normalCount();
+            throttleCount();
+            debounceCount();
+        }
+
+        function normalCount(){
+             nCnt++;
+             nh2.innerHTML = "Normal Count:" + nCnt;
+        }
+        function throttleCount(){
+            if(fireThrottle==true){
+            tCnt++;
+            th2.innerHTML = "Throttle Count: "  + tCnt;
+            fireThrottle = false;
+            setTimeout(function(){
+                fireThrottle=true
+            },500)
+        }}
+
+        function debounceCount(){
+            window.clearTimeout(dTimer);
+            dTimer = setTimeout(function(){
+                  dCnt++;
+                  dh2.innerHTML = "Debounce Count:" + dCnt;
+            },500)
+                                                         // Debounce also executes after a certain period of time: -  The waiting period is reset everytime when you move the mouse 
+                                                               // incase of debounce, if the mouse is moved and it is not to execute then the timer needs to reset/clear     //
+        }
+
+        //
+
+</script>
+</body>
+</html>
+<!--Use Case Throttling: Throttling is useful when the user performs continuos actions such as scrolling or resizing-->
+<!--here is code-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+      button{
+          height: 180px;
+          width: 270px;
+          font-size: 50px;
+          border: none;
+          background-image: url('gun.png');
+         
+      }
+   </style>
+</head>
+<body>
+   <button onclick="fireBullet()"></button>
+   <h2 id="cC">Click Count:0</h2>
+   <h2 id="bC">Bullet Count:0</h2>
+   <script>
+ 
+       let bulletCount=0;
+       let clickCount=0;
+       let fire=true;
+       function fireBullet(){
+           clickCount++;
+           if(fire){
+             bulletCount++;
+             fire=false;
+            setInterval(function(){
+                fire=true;
+            },1000)
+   
+           }
+                 
+           document.getElementById("cC").innerHTML="Click Count:" + clickCount;
+           document.getElementById("bC").innerHTML="Bullet Count:" + bulletCount;
+ 
+        }
+   </script>
+</body>
+</html>
+<!--Throttling can be used in situations where, the user is trying to generate many events but you want to control as per your program needs-->
+<!--Throttling can be used in scrolling like functionality like scrolling through instagram-->
+
+
+
+<!--Debouncing use case-->
+
+<!--Debouncing is good to have when you implement search like functionality or autocomplete feature while typing- especially when the search is making API calls on the server-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+      input{
+          font-size: 20px;
+      }
+   </style>
+</head>
+<body>
+   <input type="text" oninput="search()">
+   <h2 id="kC">Key Count:0</h2>
+   <h2 id="aC">API Count:0</h2>
+   <script>
+ 
+       let keyCount=0;
+       let APICount=0;
+       let dTimer2;
+       function search(){
+           keyCount++;
+           window.clearTimeout(dTimer2);
+             dTimer2 =  window.setTimeout(function(){
+                APICount++;
+             },200);
+           document.getElementById("kC").innerHTML="Key Count:" + keyCount;
+           document.getElementById("aC").innerHTML="API Count:" + APICount;
+        }
+   </script>
+</body>
+</html>

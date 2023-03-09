@@ -1,0 +1,37 @@
+<!--querySelector() and querySelectorAll()-->
+<!--There is also querySelector methods which search using CSS selector-->
+<!--There are 2 such methods commonly used & one must know as Javascript developer-->
+<!--querySelector()-->
+<!--querySelectorAll()-->
+<!--The querySelector() method returns the first element that matches a specified CSS selector inside the method given as an arguement-->
+<!--It searches in the entire document-->
+<!--Instead of the first element, if you want all the elements then you can use the querySelectorAll() method-->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> <!--you can also assign name to the div nd manipulate-->
+        <p name="para">First</p>
+        <p>Second</p>
+        <p class="a">Third</p>
+        <h3 class="a">H31</h3>
+        <h3 class="a">H32</h3>
+    </div>
+<button onClick="btnClicked()"> Change Content </button>
+</body>
+<script>
+    function btnClicked(){                                // ":hover" you can also search for psuedo classes
+          const element = document.querySelector(".a"); // it is going to search the entire document and get the 1st element where this condition matches
+          console.log(element);
+          const elements = document.querySelectorAll(".a");  // it returns all the elements which have class a
+                                                               // getElementById() method is a better way as all other getElementBy* methods work same as querySelector
+          console.log(elements)                              
+    }
+</script>
+</html>    

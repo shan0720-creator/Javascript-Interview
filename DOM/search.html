@@ -1,0 +1,36 @@
+<!--search html-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> <!--you can also assign name to the div nd manipulate-->
+        <p name="para">First</p>
+        <p>Second</p>
+        <p>Third</p>
+        <h3 class="a">H31</h3>
+        <h3 class="a">H32</h3>
+    </div>
+<button onClick="btnClicked()"> Change Content </button>
+</body>
+<script>
+    function btnClicked(){
+          const elements = document.getElementsByTagName("p");
+          console.log(elements);
+          const elements1 = document.getElementsByClassName("a");
+          console.log(elements1)
+          const para = document.getElementsByName("para");
+          console.log(para)
+    }
+</script>
+</html>
+<!--getElementById() is a kind of method which can only work with the document object(DOM)-->
+<!--You cannot write , element.getElementById()-->
+<!--So from Javascript when you are trying to change something, inside the javascript section you need to have reference of html elements-->
+<!--The document.getElementById() is possible but element.getElementById() is not possible because the searching of element by "Id" is always for the entire document and not for specific region-->
+<!--The Get Elements by TagName returns the possible array of the tags-->
+<!--getElementsByClassName() refers to the "class" of an element whereas the getElementsByName() refers to the "name" given to the element-->
