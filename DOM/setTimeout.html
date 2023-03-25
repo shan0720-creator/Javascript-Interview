@@ -1,3 +1,15 @@
+/* setTimeout is a built-in JavaScript function that allows you to schedule a function to be executed after a specified amount of time. The function accepts two arguments: the first argument is the function to be executed, and the second argument is the time in milliseconds after which the function should be executed.
+
+Here are some key points about setTimeout:
+
+The first argument to setTimeout can be a function or a string of code to be executed.
+The second argument to setTimeout is the time in milliseconds after which the function should be executed.
+If the second argument is 0, the function will be executed as soon as possible, but after the current script has finished executing.
+If you need to pass arguments to the function being executed, you can do so by passing them as additional arguments after the time parameter.
+setTimeout returns a timer ID, which can be used to cancel the execution of the function before it happens using the clearTimeout function.
+If the function passed to setTimeout throws an error, the error will be caught and logged to the console, but it will not stop the execution of the remaining code.
+If you need to execute a function repeatedly at a fixed interval, you can use the setInterval function instead of setTimeout. */
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
